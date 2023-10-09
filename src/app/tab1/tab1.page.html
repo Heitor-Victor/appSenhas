@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="center">
+      Senhas
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div id="mostrarSenha">
+    
+  </div>
+  <div style="margin: 60px;">
+    <div class="btCenter">
+      <ion-button (click) = "newTicket('SG')">Geral</ion-button>
+    </div>  
+    <div class="btCenter">
+      <ion-button (click) = "newTicket('SP')">Prioridade</ion-button>
+    </div> 
+    <div class="btCenter">
+      <ion-button (click) = "newTicket('SE')">Entrega exames</ion-button>
+    </div>   
+  </div>
+  <ion-text class="btCenter" color="primary">
+    <h1>SENHA</h1>
+  </ion-text>
+  <ion-card>
+    <ion-card-header class="btCenter">
+      <h1><b>{{presentTicket}}</b></h1>
+    </ion-card-header>
+  </ion-card>
+  
+
+
+</ion-content>

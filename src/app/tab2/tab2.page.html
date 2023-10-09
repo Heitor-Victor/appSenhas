@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="center">
+      Atendimento
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="btCenter" style="border: 20px;">
+    <ion-button [disabled]="globalVar.generatedTickets.length === 0" (click) = "callTicket()">Chamar senha</ion-button>
+  </div>
+  
+  <ion-card>
+    <h1 class="btCenter">{{presentTicket.number}}</h1>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Ultimas senhas chamadas:</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list *ngFor="let ticket of calledTickets">
+        <ion-item>
+          <ion-icon name="{{ticket.type}}" slot="start"></ion-icon>
+          <ion-label> {{ticket.number}}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
