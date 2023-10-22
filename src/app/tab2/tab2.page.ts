@@ -35,7 +35,7 @@ export class Tab2Page {
 
   /* função para seleção de ticket por prioridade*/
   selectTicket() {
-    let thereIsSP:boolean = false
+    let thereIsSP:boolean = false;
     if (this.presentTicket.type !== 'accessibility') {
       for (let i = 0; i < this.globalVar.generatedTickets.length; i++) {
         if (this.globalVar.generatedTickets[i].type === 'accessibility') {
@@ -56,6 +56,13 @@ export class Tab2Page {
       }
     } 
     if (thereIsSP == false && (this.presentTicket.type === "document" || thereIsSE == false)) {
+      for (let i = 0; i < this.globalVar.generatedTickets.length; i++) {
+        if (this.globalVar.generatedTickets[i].type === 'ticket') {
+          this.presentTicket = this.globalVar.generatedTickets[i];
+          this.globalVar.generatedTickets.splice(i, 1);
+          return this.presentTicket
+        }
+      }
       this.presentTicket = this.globalVar.generatedTickets[0]
       this.globalVar.generatedTickets.splice(0,1)
       return this.presentTicket
